@@ -1,0 +1,32 @@
+//component
+// `> .subtitles`
+@mixin subtitles () {
+  //block
+  //`> .subtitles`
+  > .subtitles {
+    //variables
+    $large: 545px;
+    $subtitles__subtitle--width: 10.8rem;
+    $subtitles__subtitle--width: 5.3rem;
+
+    //layout
+    display: block;
+
+    //[RWD: $large]
+    @media screen and ( min-width: $large ) {
+      // [layout]
+      display: grid;
+      grid: {
+        template-columns: repeat( auto-fit, $subtitles__subtitle--width );
+        gap: .8rem;
+      };
+      justify-content: center;
+    }
+
+    // [customization]??
+    @content;
+
+    //element
+    //
+  }
+}
