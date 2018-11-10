@@ -5,15 +5,28 @@ append stylesheets
 append header
 
 append content
+  inclde /components/common/topic.pug
   -
     const i18n = Object.freeze( {
       'en-US': {
+        'topic':    'Index',
+        'noResult': 'No Result',
+        'allAnnounce' : 'All Announcement',
+        'activityInfor' : 'Activity Information',
+        'employedInfor' : 'Employed Information'
       },
       'zh-TW': {
+        'topic':    '成大資訊工程學系公告',
+        'noResult': '無結果',
+        'allAnnounce' : '全部公告',
+        'activityInfor' : '活動訊息',
+        'employedInfor' : '徵人資訊'
       },
     } );
-
   main.content
+    +topic( i18n[ language ].topic )
+    section#subtitles.subtitles
+    
 
 append scripts
   +js( 'about/index' )
