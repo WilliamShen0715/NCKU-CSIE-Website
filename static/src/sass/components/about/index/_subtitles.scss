@@ -1,0 +1,131 @@
+// component
+// `> .subtitles`
+@mixin subtitles () {
+  // block
+  // `> .subtitles`
+  > .subtitles {
+    // variables
+    $large: 545px;
+    $subtitles__subtitle--width: 30.7rem;
+    $subtitles__subtitle--height: 36rem;
+
+    // layout
+    display: block;
+    border: {
+      width: 10.1rem;
+      color: black;
+    }
+
+    // [RWD: $large]
+    @media screen and ( min-width: $large ) {
+      // [layout]
+      display: grid;
+      grid: {
+        template-columns: repeat( auto-fit, $subtitles__subtitle--width );
+        gap: 2.3rem;
+      };
+      justify-content: center;
+    }
+
+    // [customization]??
+    @content;
+
+    // element
+    // `> .subtitles > .subtitles__subtitle`
+    > .subtitles__subtitle.subtitle {
+      // [layout]
+      display: block;
+      text-align: center;
+
+      // [skin]
+      width: 100%;
+      min-height: $subtitles__subtitle--height;
+      background-color: #ffffff;
+
+      // [RWD:large]
+      @media screen and ( min-width: $large ) {
+        // [skin]
+        margin: {
+          top: 10.2rem;
+          bottom: 10.2rem;
+        }
+        border: 7rem;
+        width: $subtitles__subtitle--width;
+      }
+
+      &--hide {
+        display: none;
+      }
+
+      // element
+      > .subtitle__title {
+        // [layout]
+        display: block;
+        text-align: center;
+        word: {
+          wrap: break-word;
+          break: break-all;
+        }
+        white-space: normal;
+
+        // [skin]
+        margin: {
+          top: 13.3rem;
+          left: auto;
+          right: auto;
+          bottom: .7rem;
+        }
+        line-height: 2.6rem;
+        font-size: 1.7rem;
+        border-radius: .47rem;
+        color: black;
+        background-color: #ffffff;
+      }
+
+      > .subtitle__detail {
+        // [layout]
+        display: block;
+        text-align: center;
+        word: {
+          wrap: break-word;
+          break: break-all;
+        }
+        white-space: normal;
+
+        // [skin]
+        margin: {
+          left: 6.9rem;
+          right: 6.9rem;
+          bottom: 2.9rem;
+        }
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+        border-radius: .47rem;
+        color: #757575;
+        background-color: #ffffff;
+      }
+
+      > .subtitle__subtitle {
+        // [layout]
+        display: block;
+        text-align: center;
+        word: {
+          wrap: break-word;
+          break: break-all;
+        }
+        white-space: normal;
+
+        // [skin]
+        margin: {
+          left: auto;
+          right: auto;
+        }
+        line-height: 1.7rem;
+        font-size: 1.1rem;
+        border-radius: .47rem;
+        color: #6982c0;
+        background-color: #ffffff;
+      }
+    }
+  }
+}
