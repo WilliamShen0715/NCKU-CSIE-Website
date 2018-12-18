@@ -1,0 +1,17 @@
+mixin subtitles__subtitle( word = {} )
+  //-
+    const i18n = Object.freeze( {
+      'en-US': {
+        'title':   'title',
+        'details':  'details',
+        'subtitles':  'subtitles',
+      },
+      'zh-TW': {
+        'title':   'title',
+        'details':  'details',
+        'subtitles':  'subtitles',
+    } );
+  h1.subtitles__subtitle.subtitle
+    p.subtitle__title= word.title
+    p.subtitle__detail= word.detail
+    p.subtitle__subtitle= word.subtitle
